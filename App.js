@@ -1,6 +1,7 @@
 import React from 'react';
 import ApplicationRootScreen from './components/ApplicationRootScreen';
 import CategoryScreen from './components/CategoryScreen';
+import ItemScreen from './components/ItemScreen';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
@@ -24,7 +25,8 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 const RootStack = createStackNavigator(
   {
     ApplicationRoot: ApplicationRootScreen,
-    Category: CategoryScreen
+    Category: CategoryScreen,
+    Item: ItemScreen
   },
   {
     initialRouteName: 'ApplicationRoot',
