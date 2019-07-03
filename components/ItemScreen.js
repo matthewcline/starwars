@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, Button, FlatList, ActivityIndicator } from 'react-native';
+import { AppRegistry, Text, View, ScrollView, Button, FlatList, ActivityIndicator } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class ItemScreen extends Component {
@@ -9,34 +9,24 @@ class ItemScreen extends Component {
     this.state ={ isLoading: true}
   }
 
-  componentDidMount(){
-    const url = this.props.navigation.getParam('url', 'NO-URL'); 
-    console.log('url: ', url);
-    return fetch(url)
-      .then((response) => response.json())
-      .then((responseJson) => {
-
-        this.setState({
-          isLoading: false,
-          dataSource: responseJson.results,
-        }, function(){
-
-        });
-
-      })
-      .catch((error) =>{
-        console.error(error);
+  async componentDidMount() {
+    try {
+      var url = this.props.navigation.getParam('url', 'NO-URL');
+      console.log('url here: ', url);
+      var response = await fetch(url);
+      var responseJson = await response.json();
+      this.setState({
+        isLoading: false,
+        dataSource: responseJson
       });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   static navigationOptions = ({ navigation, navigationOptions }) => {
-    console.log(navigationOptions);
-    // Notice the logs ^
-    // sometimes we call with the default navigationOptions and other times
-    // we call this with the previous navigationOptions that were returned from
-    // this very function
     return {
-      title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+      title: navigation.getParam('title', 'Title'),
       headerStyle: {
         backgroundColor: navigationOptions.headerTintColor,
       },
@@ -44,11 +34,44 @@ class ItemScreen extends Component {
     };
   };
 
+  getItems() {
+    const items = Object.keys(this.state.dataSource).map((key, index) => {  
+      return (
+        <View
+          key={index}
+        >
+          <Text>
+            {key}
+          </Text>
+          <Text>
+            {this.state.dataSource[key]}
+          </Text>
+        </View>
+      );
+    });
+    return items;
+  }
+
+  getInitials = (str) => {
+    let initials = '';
+    let words = str.split(" ");
+    if (words.length > 0) {
+      initials += words[0][0];
+      if (words.length > 1) {
+        initials += words[1][0]
+      }
+    }
+    return initials;
+  }
+
   render() {
     /* 2. Get the param, provide a fallback value if not available */
     const { navigation } = this.props;
     const url = navigation.getParam('url', 'NO-URL'); 
-    const otherParam = navigation.getParam('otherParam', 'some default value');
+    const heading = navigation.getParam('heading', 'heading');
+    const initials = this.getInitials(heading);
+    const subheading = navigation.getParam('subheading', 'subheading');
+
     if(this.state.isLoading){
       return(
         <View style={{flex: 1, padding: 20}}>
@@ -59,9 +82,13 @@ class ItemScreen extends Component {
     console.log(this.state.dataSource);
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-        <Text>url: {JSON.stringify(url)}</Text>
-        <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+        <View>
+          <Text>{ initials }</Text>
+          <Text>{ subheading }</Text>
+        </View>
+        <ScrollView>
+          {this.getItems()}
+        </ScrollView>
       </View>
     );
   }

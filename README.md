@@ -8,3 +8,6 @@ Next, install react-native-gesture-handler. If you’re using the Expo managed w
 yarn add react-native-gesture-handler
 # or with npm
 # npm install --save react-native-gesture-handler
+
+# Todo
+add tests for getInitials()

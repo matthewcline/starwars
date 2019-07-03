@@ -10,26 +10,6 @@ class CategoryScreen extends Component {
   }
 
   async componentDidMount() {
-    // const url = this.props.navigation.getParam('url', 'NO-URL'); 
-    // console.log('url: ', url);
-    // return fetch(url)
-    //   .then((response) => response.json())
-    //   .then((responseJson) => {
-
-    //     this.setState({
-    //       isLoading: false,
-    //       url: url,
-    //       dataSource: responseJson.results,
-    //     }, function(){
-
-    //     });
-
-    //   })
-    //   .catch((error) =>{
-    //     console.error(error);
-    //   });
-    // }
-
     try {
       var url = this.props.navigation.getParam('url', 'NO-URL');
       var topUrl = url;
@@ -62,7 +42,7 @@ class CategoryScreen extends Component {
     // we call this with the previous navigationOptions that were returned from
     // this very function
     return {
-      title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+      title: navigation.getParam('categoryTitle', 'categoryTitle'),
       headerStyle: {
         backgroundColor: navigationOptions.headerTintColor,
       },
@@ -76,18 +56,17 @@ class CategoryScreen extends Component {
         <TouchableOpacity
           key={index + 1}
           onPress={() => {
-            console.log("pressed");
-            /* 1. Navigate to the Details route with params */
             this.props.navigation.navigate('Item', {
               itemId: 86,
-              otherParam: 'filmss',
-              url: `${this.state.url}/${index + 1}`
+              heading: item.name || item.title,
+              subheading: item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`,
+              url: item.url
             });
           }}
         >
           <Text>
-            {item.name}
-            {item.birth_year}
+            {item.name || item.title}
+            {item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`}
           </Text>
         </TouchableOpacity>
       );

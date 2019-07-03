@@ -19,7 +19,7 @@ class ApplicationRootScreen extends Component {
             /* 1. Navigate to the Details route with params */
             this.props.navigation.navigate('Category', {
               url: "https://swapi.co/api/people/",
-              otherParam: 'people',
+              categoryTitle: 'PEOPLE',
             });
           }}
         >
@@ -30,15 +30,66 @@ class ApplicationRootScreen extends Component {
 
         <TouchableOpacity
           onPress={() => {
-            /* 1. Navigate to the Details route with params */
             this.props.navigation.navigate('Category', {
-              itemId: 86,
-              otherParam: 'films',
+              url: "https://swapi.co/api/films/",
+              categoryTitle: 'FILMS',
             });
           }}
         >
           <Text>
             Films
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            this.props.navigation.navigate('Category', {
+              url: "https://swapi.co/api/starships/",
+              categoryTitle: 'STARSHIPS'
+            });
+          }}
+        >
+          <Text>
+            Starships
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            this.props.navigation.navigate('Category', {
+              url: "https://swapi.co/api/vehicles/",
+              categoryTitle: 'VEHICLES'
+            });
+          }}
+        >
+          <Text>
+            Vehicles
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            this.props.navigation.navigate('Category', {
+              url: "https://swapi.co/api/species/",
+              categoryTitle: 'SPECIES'
+            });
+          }}
+        >
+          <Text>
+            Species
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            this.props.navigation.navigate('Category', {
+              url: "https://swapi.co/api/planets/",
+              categoryTitle: 'PLANETS'
+            });
+          }}
+        >
+          <Text>
+            Planets
           </Text>
         </TouchableOpacity>
 
