@@ -5,7 +5,12 @@ class Category extends Component {
   render() {
     return (
       <View style={{alignItems: 'center'}}>
-        <Text>{this.props.name}</Text>
+        {/* <Text>{this.props.name}</Text> */}
+        <Text>hi</Text>
+        <Button
+          onPress={() => goBack()}
+          title="Go to Brent's profile"
+        />
       </View>
     );
   }
