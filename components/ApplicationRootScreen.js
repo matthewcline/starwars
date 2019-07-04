@@ -1,23 +1,8 @@
 import React, { Component } from 'react';
-import Category from './CategoryScreen';
-import { AppRegistry, Image, ImageBackground, View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-
-class Header extends React.Component {
-  render() {
-    return (
-      <Image
-        source={require('../assets/application_root_header_gradient.png')}
-        style={{ width: '100%', height: '100%' }}
-      />
-    );
-  }
-}
+import { Image, ImageBackground, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 class ApplicationRootScreen extends Component {
   static navigationOptions = {
-    // headerTitle instead of title
-    // headerTitle: <Header />,
     headerTitle: 'STAR WARS API'
   };
 
@@ -40,7 +25,6 @@ class ApplicationRootScreen extends Component {
         <View style={{flex: 1, alignItems: 'center'}}>
           <Image 
             source={assetSource} 
-            style={styles.categoryImage}
           />
         </View>
         <Text style={{flex: 5}}>
@@ -70,19 +54,18 @@ class ApplicationRootScreen extends Component {
 
   getHeader() {
     return (
-      // <View style={{flex: 1, flexDirection: 'column', justifyContent: 'flex-start'}}>
-        <ImageBackground 
-          source={require('../assets/application_root_header.png')}
-          style={{flex: 1, width: '100%', height: '100%', justifyContent: 'flex-end'}}
-        >
-          <Text style={{color: 'white', marginLeft: '4%', fontSize: 17}}>
-            Explore the Star Wars Universe
-          </Text>
-          <Text style={{color: 'white', margin: '4%'}}>
-            Orbiting the planet at maximum velocity.  The moon with the Rebel
-            base will be in range in thirty minutes.  This will be a day long remembered.
-          </Text>
-        </ImageBackground>
+      <ImageBackground 
+        source={require('../assets/application_root_header.png')}
+        style={{flex: 1, width: '100%', height: '100%', justifyContent: 'flex-end'}}
+      >
+        <Text style={{color: 'white', marginLeft: '4%', fontSize: 17}}>
+          Explore the Star Wars Universe
+        </Text>
+        <Text style={{color: 'white', margin: '4%'}}>
+          Orbiting the planet at maximum velocity.  The moon with the Rebel
+          base will be in range in thirty minutes.  This will be a day long remembered.
+        </Text>
+      </ImageBackground>
     );
   }
 
@@ -109,26 +92,16 @@ const styles = StyleSheet.create({
     shadowRadius: 1,
     shadowColor: '#95999d',
     shadowOpacity: 0.9,
-    shadowOffset: {width: 0, height: 2}
-
-  },
-  categoryImage: {
+    shadowOffset: {width: 0, height: 2},
   },
   categoriesContainer: {
-    flex: 2,
+    flex: 3,
     paddingTop: '2%',
     paddingLeft: '2%',
     paddingRight: '2%',
     backgroundColor: '#eaf1f8', 
     width: '100%'
-  },
-  title: {
-    fontSize: 19,
-    fontWeight: 'bold',
-  },
-  activeTitle: {
-    color: 'red',
-  },
+  }
 });
 
 export default ApplicationRootScreen;

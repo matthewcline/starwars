@@ -16,15 +16,12 @@ class CategoryScreen extends Component {
       var response = await fetch(url);
       var responseJson = await response.json();
       var results = responseJson.results;
-      console.log('responseJson: ');
       while (responseJson.next) {
-        console.log('responseJson in while loop: ');
         url = responseJson.next;
         response = await fetch(url);
         responseJson = await response.json();
         results = results.concat(responseJson.results);
       }
-      console.log("done");
       this.setState({
         isLoading: false,
         dataSource: results,
@@ -36,17 +33,8 @@ class CategoryScreen extends Component {
   }
 
   static navigationOptions = ({ navigation, navigationOptions }) => {
-    // console.log(navigationOptions);
-    // Notice the logs ^
-    // sometimes we call with the default navigationOptions and other times
-    // we call this with the previous navigationOptions that were returned from
-    // this very function
     return {
       title: navigation.getParam('categoryTitle', 'categoryTitle'),
-      // headerStyle: {
-      //   backgroundColor: navigationOptions.headerTintColor,
-      // },
-      // headerTintColor: navigationOptions.headerStyle.backgroundColor,
     };
   };
 

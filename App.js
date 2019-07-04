@@ -2,7 +2,7 @@ import React from 'react';
 import ApplicationRootScreen from './components/ApplicationRootScreen';
 import CategoryScreen from './components/CategoryScreen';
 import ItemScreen from './components/ItemScreen';
-import { Image } from 'react-native';
+import { Image, View, Header, StyleSheet } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 const RootStack = createStackNavigator(
@@ -14,12 +14,10 @@ const RootStack = createStackNavigator(
   {
     initialRouteName: 'ApplicationRoot',
     defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: 'transparent'
-      },
+      headerTransparent: false,
       headerBackground: (
         <Image
-          style={{position: 'absolute', bottom: 0, opacity: 1.0, backgroundColor: 'transparent'}}
+          style={{position: 'absolute', bottom: 0}}
           source={require('./assets/application_root_header_gradient.png')}
         />
       ),
@@ -27,6 +25,7 @@ const RootStack = createStackNavigator(
       headerTitleStyle: {
         fontWeight: 'bold',
       },
+      headerBackTitle: null
     },
   }
 );
