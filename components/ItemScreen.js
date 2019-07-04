@@ -25,7 +25,7 @@ class ItemScreen extends Component {
 
   static navigationOptions = ({ navigation, navigationOptions }) => {
     return {
-      title: navigation.getParam('heading', 'Heading'),
+      title: navigation.getParam('heading', 'Heading').toUpperCase(),
     };
   };
 

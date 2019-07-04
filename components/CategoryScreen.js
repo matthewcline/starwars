@@ -38,6 +38,12 @@ class CategoryScreen extends Component {
     };
   };
 
+  getDate = (str) => {
+    var date = str.substring(0, str.indexOf('T'));
+    date = date.split("-");
+    return `${date[1]}/${date[2]}/${date[0]}`
+  }
+
   getItems() {
     const items = this.state.dataSource.map((item, index) => {  
       return (
@@ -55,14 +61,14 @@ class CategoryScreen extends Component {
         >
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
 
-            <View style={{flex: 1, flexDirection: 'row'}}>
+            <View style={{flex: 3, flexDirection: 'row'}}>
               <View style={{marginLeft: 15, marginTop: 15, marginBottom: 15, backgroundColor: '#D3D3D3', width: 60, height: 60, borderRadius: 30, alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={{color: 'white', fontSize: 20}}>
+                <Text style={{color: 'white', fontSize: 22}}>
                   {item.name ? this.getInitials(item.name) : this.getInitials(item.title)}
                 </Text>
               </View>
               <View style={{marginLeft: 15, marginTop: 15}}>
-                <Text style={{fontSize: 18}}>
+                <Text style={{fontSize: 18, paddingBottom: 4}}>
                   {item.name || item.title}
                 </Text>
                 <Text style={{color: 'gray'}}>
@@ -71,16 +77,12 @@ class CategoryScreen extends Component {
               </View>
             </View>
 
-            {/* <View style={{flex: 1}}> */}
-              <View style={{marginTop: 27, marginRight: 5, flex: 1, alignItems: 'flex-end', justifyContent: 'flex-start'}}>
-                <Text style={{color: 'gray'}}>
-                  {item.created.substring(0, item.created.indexOf('T'))}
-                </Text>
-                <Image source={require('../assets/disclosure_caret.png')} />
-              </View>
-            {/* </View> */}
-
-
+            <View style={{marginTop: 20, marginLeft: 5, marginRight: 5, flex: 2, alignItems: 'flex-end', justifyContent: 'flex-start'}}>
+              <Text style={{color: 'gray', paddingBottom: 5}}>
+                {this.getDate(item.created)}
+              </Text>
+              <Image source={require('../assets/disclosure_caret.png')} />
+            </View>
           </View>
         </TouchableOpacity>
       );
@@ -97,7 +99,7 @@ class CategoryScreen extends Component {
         initials += words[1][0]
       }
     }
-    return initials;
+    return initials.toUpperCase();
   }
 
   render() {
@@ -115,13 +117,8 @@ class CategoryScreen extends Component {
     }
     return (
       <View style={{ flex: 1, backgroundColor: '#eaf1f8', justifyContent: 'center', alignItems: 'center'}}>
-        <Text style={{fontStyle: 'italic', marginTop: 15}}>"I've altered the deal - Pray I don't alter it any further"</Text>
+        <Text style={{fontStyle: 'italic', marginTop: 15, fontSize: 12}}>"I've altered the deal - Pray I don't alter it any further"</Text>
         <ScrollView style={{flex: 1, marginTop:20, width: '100%'}}>
-          {/* <FlatList
-            data={this.state.dataSource}
-            renderItem={({item}) => <Text>{item.name}, {item.birth_year}</Text>}
-            keyExtractor={({name}, index) => name}
-          /> */}
           {this.getItems()}
         </ScrollView>
       </View>
