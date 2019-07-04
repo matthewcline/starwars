@@ -43,10 +43,10 @@ class CategoryScreen extends Component {
     // this very function
     return {
       title: navigation.getParam('categoryTitle', 'categoryTitle'),
-      headerStyle: {
-        backgroundColor: navigationOptions.headerTintColor,
-      },
-      headerTintColor: navigationOptions.headerStyle.backgroundColor,
+      // headerStyle: {
+      //   backgroundColor: navigationOptions.headerTintColor,
+      // },
+      // headerTintColor: navigationOptions.headerStyle.backgroundColor,
     };
   };
 

@@ -17,8 +17,8 @@ class Header extends React.Component {
 class ApplicationRootScreen extends Component {
   static navigationOptions = {
     // headerTitle instead of title
-    headerTitle: <Header />,
-    // headerTitle: 'STAR WARS API'
+    // headerTitle: <Header />,
+    headerTitle: 'STAR WARS API'
   };
 
   // taken from: https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript

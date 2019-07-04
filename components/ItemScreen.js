@@ -26,11 +26,11 @@ class ItemScreen extends Component {
 
   static navigationOptions = ({ navigation, navigationOptions }) => {
     return {
-      title: navigation.getParam('title', 'Title'),
-      headerStyle: {
-        backgroundColor: navigationOptions.headerTintColor,
-      },
-      headerTintColor: navigationOptions.headerStyle.backgroundColor,
+      title: navigation.getParam('heading', 'Heading'),
+      // headerStyle: {
+      //   backgroundColor: navigationOptions.headerTintColor,
+      // },
+      // headerTintColor: navigationOptions.headerStyle.backgroundColor,
     };
   };
 
