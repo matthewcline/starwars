@@ -6,13 +6,12 @@ class ItemScreen extends Component {
 
   constructor(props){
     super(props);
-    this.state ={ isLoading: true}
+    this.state = { isLoading: true }
   }
 
   async componentDidMount() {
     try {
       var url = this.props.navigation.getParam('url', 'NO-URL');
-      console.log('url here: ', url);
       var response = await fetch(url);
       var responseJson = await response.json();
       this.setState({
@@ -27,10 +26,6 @@ class ItemScreen extends Component {
   static navigationOptions = ({ navigation, navigationOptions }) => {
     return {
       title: navigation.getParam('heading', 'Heading'),
-      // headerStyle: {
-      //   backgroundColor: navigationOptions.headerTintColor,
-      // },
-      // headerTintColor: navigationOptions.headerStyle.backgroundColor,
     };
   };
 
@@ -68,7 +63,6 @@ class ItemScreen extends Component {
   }
 
   render() {
-    /* 2. Get the param, provide a fallback value if not available */
     const { navigation } = this.props;
     const url = navigation.getParam('url', 'NO-URL'); 
     const heading = navigation.getParam('heading', 'heading');
@@ -82,7 +76,6 @@ class ItemScreen extends Component {
         </View>
       )
     }
-    console.log(this.state.dataSource);
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <ScrollView style={{backgroundColor: 'black', width: '100%'}}>

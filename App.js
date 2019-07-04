@@ -2,25 +2,8 @@ import React from 'react';
 import ApplicationRootScreen from './components/ApplicationRootScreen';
 import CategoryScreen from './components/CategoryScreen';
 import ItemScreen from './components/ItemScreen';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { Image } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <ApplicationRoot />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
 
 const RootStack = createStackNavigator(
   {
@@ -30,7 +13,6 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'ApplicationRoot',
-    /* The header config from ApplicationRootScreen is now here */
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: 'transparent'
@@ -56,5 +38,3 @@ export default class App extends React.Component {
     return <AppContainer />;
   }
 }
-
-// // AppRegistry.registerComponent("MyApp", () => App);
