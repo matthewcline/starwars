@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, ScrollView, Button, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { AppRegistry, Text, View, ScrollView, Button, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class CategoryScreen extends Component {
@@ -54,6 +54,7 @@ class CategoryScreen extends Component {
     const items = this.state.dataSource.map((item, index) => {  
       return (
         <TouchableOpacity
+          style={styles.categoryItemContainer}
           key={index + 1}
           onPress={() => {
             this.props.navigation.navigate('Item', {
@@ -64,10 +65,14 @@ class CategoryScreen extends Component {
             });
           }}
         >
-          <Text>
-            {item.name || item.title}
-            {item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`}
-          </Text>
+          <View>
+            <Text>
+              {item.name || item.title}
+            </Text>
+            <Text>
+              {item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`}
+            </Text>
+          </View>
         </TouchableOpacity>
       );
     });
@@ -88,7 +93,7 @@ class CategoryScreen extends Component {
       )
     }
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ flex: 1 }}>
         <Text>Details Screen</Text>
         <Text>url: {JSON.stringify(url)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text>
@@ -100,29 +105,40 @@ class CategoryScreen extends Component {
           /> */}
           {this.getItems()}
         </ScrollView>
-        {/* <Button
-          title="Go to Details... again"
-          onPress={() =>
-            this.props.navigation.push('Details', {
-              itemId: Math.floor(Math.random() * 100),
-            })}
-        />
-        <Button
-          title="Update the title"
-          onPress={() =>
-            this.props.navigation.setParams({ otherParam: 'Updated!' })}
-        />
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate('Home')}
-        />
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        /> */}
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  categoryItemContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderTopWidth: 0.5,
+    borderBottomWidth: 0.5,
+    borderTopColor: '#d6d7da',
+    borderBottomColor: '#d6d7da',
+    backgroundColor: 'white',
+
+  },
+  categoryImage: {
+  },
+  categoriesContainer: {
+    flex: 2,
+    paddingTop: '2%',
+    paddingLeft: '2%',
+    paddingRight: '2%',
+    backgroundColor: '#eaf1f8', 
+    width: '100%'
+  },
+  title: {
+    fontSize: 19,
+    fontWeight: 'bold',
+  },
+  activeTitle: {
+    color: 'red',
+  },
+});
 
 export default CategoryScreen;
