@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, ScrollView, Image, Button, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { getDate, getInitials } from './utils';
+import { Text, View, ScrollView, Image, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 
 class CategoryScreen extends Component {
 
@@ -37,13 +37,7 @@ class CategoryScreen extends Component {
       title: navigation.getParam('categoryTitle', 'categoryTitle'),
     };
   };
-
-  getDate = (str) => {
-    var date = str.substring(0, str.indexOf('T'));
-    date = date.split("-");
-    return `${date[1]}/${date[2]}/${date[0]}`
-  }
-
+  
   getItems() {
     const items = this.state.dataSource.map((item, index) => {  
       return (
@@ -60,11 +54,10 @@ class CategoryScreen extends Component {
           }}
         >
           <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-
             <View style={{flex: 3, flexDirection: 'row'}}>
               <View style={{marginLeft: 15, marginTop: 15, marginBottom: 15, backgroundColor: '#D3D3D3', width: 60, height: 60, borderRadius: 30, alignItems: 'center', justifyContent: 'center'}}>
                 <Text style={{color: 'white', fontSize: 22}}>
-                  {item.name ? this.getInitials(item.name) : this.getInitials(item.title)}
+                  {item.name ? getInitials(item.name) : getInitials(item.title)}
                 </Text>
               </View>
               <View style={{marginLeft: 15, marginTop: 15}}>
@@ -79,7 +72,7 @@ class CategoryScreen extends Component {
 
             <View style={{marginTop: 20, marginLeft: 5, marginRight: 5, flex: 2, alignItems: 'flex-end', justifyContent: 'flex-start'}}>
               <Text style={{color: 'gray', paddingBottom: 5}}>
-                {this.getDate(item.created)}
+                {getDate(item.created)}
               </Text>
               <Image source={require('../assets/disclosure_caret.png')} />
             </View>
@@ -90,24 +83,7 @@ class CategoryScreen extends Component {
     return items;
   }
 
-  getInitials = (str) => {
-    let initials = '';
-    let words = str.split(" ");
-    if (words.length > 0) {
-      initials += words[0][0];
-      if (words.length > 1) {
-        initials += words[1][0]
-      }
-    }
-    return initials.toUpperCase();
-  }
-
   render() {
-    /* 2. Get the param, provide a fallback value if not available */
-    const { navigation } = this.props;
-    const url = navigation.getParam('url', 'NO-URL');
-    const otherParam = navigation.getParam('otherParam', 'some default value');
-
     if(this.state.isLoading){
       return(
         <View style={{flex: 1, padding: 20}}>
@@ -136,25 +112,7 @@ const styles = StyleSheet.create({
     borderTopColor: '#d6d7da',
     borderBottomColor: '#d6d7da',
     backgroundColor: 'white',
-
-  },
-  categoryImage: {
-  },
-  categoriesContainer: {
-    flex: 2,
-    paddingTop: '2%',
-    paddingLeft: '2%',
-    paddingRight: '2%',
-    backgroundColor: '#eaf1f8', 
-    width: '100%'
-  },
-  title: {
-    fontSize: 19,
-    fontWeight: 'bold',
-  },
-  activeTitle: {
-    color: 'red',
-  },
+  }
 });
 
 export default CategoryScreen;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getInitials } from './utils';
 import { AppRegistry, Text, View, ScrollView, Button, FlatList, ActivityIndicator } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
@@ -50,23 +51,11 @@ class ItemScreen extends Component {
     return items;
   }
 
-  getInitials = (str) => {
-    let initials = '';
-    let words = str.split(" ");
-    if (words.length > 0) {
-      initials += words[0][0];
-      if (words.length > 1) {
-        initials += words[1][0]
-      }
-    }
-    return initials;
-  }
-
   render() {
     const { navigation } = this.props;
     const url = navigation.getParam('url', 'NO-URL'); 
     const heading = navigation.getParam('heading', 'heading');
-    const initials = this.getInitials(heading);
+    const initials = getInitials(heading);
     const subheading = navigation.getParam('subheading', 'subheading');
 
     if(this.state.isLoading){
