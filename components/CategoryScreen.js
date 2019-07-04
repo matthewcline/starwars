@@ -60,7 +60,7 @@ class CategoryScreen extends Component {
             this.props.navigation.navigate('Item', {
               itemId: 86,
               heading: item.name || item.title,
-              subheading: item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`,
+              subheading: item.birth_year || item.diameter || item.classification || item.model || item.opening_crawl,
               url: item.url
             });
           }}

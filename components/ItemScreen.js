@@ -39,13 +39,16 @@ class ItemScreen extends Component {
       return (
         <View
           key={index}
+          style={{backgroundColor: 'white', paddingLeft: 10, paddingTop: 20, paddingBottom: 25, marginBottom: 15}}
         >
-          <Text>
+          <Text style={{fontSize: 13, color: 'gray', paddingBottom: 7}}>
             {key}
           </Text>
-          <Text>
-            {this.state.dataSource[key]}
-          </Text>
+          <View style={{borderBottomColor: 'gray', borderBottomWidth: 1, paddingBottom: 11}}>
+            <Text style={{fontSize: 15}}>
+              {this.state.dataSource[key]}
+            </Text>
+          </View>
         </View>
       );
     });
@@ -82,11 +85,19 @@ class ItemScreen extends Component {
     console.log(this.state.dataSource);
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <View>
-          <Text>{ initials }</Text>
-          <Text>{ subheading }</Text>
-        </View>
-        <ScrollView>
+        <ScrollView style={{backgroundColor: 'black', width: '100%'}}>
+          <View style={{flex: 1, alignItems: 'center'}}>
+            <View style={{marginTop: 20, marginBottom: 20, backgroundColor: 'white', width: 100, height: 100, borderRadius: 50, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{color: 'black', fontSize: 60}}>
+                { initials }
+              </Text>
+            </View>
+            <View>
+              <Text style={{marginBottom: 20, color: 'yellow'}}>
+                { subheading }
+              </Text>
+            </View>
+          </View>
           {this.getItems()}
         </ScrollView>
       </View>
