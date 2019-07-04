@@ -11,3 +11,6 @@ yarn add react-native-gesture-handler
 
 # Todo
 add tests for getInitials()
+
+# Issues
+https://stackoverflow.com/questions/52061476/cancel-all-subscriptions-and-asyncs-in-the-componentwillunmount-method-how

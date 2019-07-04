@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, View, ScrollView, Button, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
+import { AppRegistry, Text, View, ScrollView, Image, Button, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 class CategoryScreen extends Component {
@@ -65,18 +65,51 @@ class CategoryScreen extends Component {
             });
           }}
         >
-          <View>
-            <Text>
-              {item.name || item.title}
-            </Text>
-            <Text>
-              {item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`}
-            </Text>
+          <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+
+            <View style={{flex: 1, flexDirection: 'row'}}>
+              <View style={{marginLeft: 15, marginTop: 15, marginBottom: 15, backgroundColor: '#D3D3D3', width: 60, height: 60, borderRadius: 30, alignItems: 'center', justifyContent: 'center'}}>
+                <Text style={{color: 'white', fontSize: 20}}>
+                  {item.name ? this.getInitials(item.name) : this.getInitials(item.title)}
+                </Text>
+              </View>
+              <View style={{marginLeft: 15, marginTop: 15}}>
+                <Text style={{fontSize: 18}}>
+                  {item.name || item.title}
+                </Text>
+                <Text style={{color: 'gray'}}>
+                  {item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`}
+                </Text>
+              </View>
+            </View>
+
+            {/* <View style={{flex: 1}}> */}
+              <View style={{marginTop: 27, marginRight: 5, flex: 1, alignItems: 'flex-end', justifyContent: 'flex-start'}}>
+                <Text style={{color: 'gray'}}>
+                  {item.created.substring(0, item.created.indexOf('T'))}
+                </Text>
+                <Image source={require('../assets/disclosure_caret.png')} />
+              </View>
+            {/* </View> */}
+
+
           </View>
         </TouchableOpacity>
       );
     });
     return items;
+  }
+
+  getInitials = (str) => {
+    let initials = '';
+    let words = str.split(" ");
+    if (words.length > 0) {
+      initials += words[0][0];
+      if (words.length > 1) {
+        initials += words[1][0]
+      }
+    }
+    return initials;
   }
 
   render() {
@@ -93,11 +126,9 @@ class CategoryScreen extends Component {
       )
     }
     return (
-      <View style={{ flex: 1 }}>
-        <Text>Details Screen</Text>
-        <Text>url: {JSON.stringify(url)}</Text>
-        <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-        <ScrollView style={{flex: 1, paddingTop:20}}>
+      <View style={{ flex: 1, backgroundColor: '#eaf1f8', justifyContent: 'center', alignItems: 'center'}}>
+        <Text style={{fontStyle: 'italic', marginTop: 15}}>"I've altered the deal - Pray I don't alter it any further"</Text>
+        <ScrollView style={{flex: 1, marginTop:20, width: '100%'}}>
           {/* <FlatList
             data={this.state.dataSource}
             renderItem={({item}) => <Text>{item.name}, {item.birth_year}</Text>}
