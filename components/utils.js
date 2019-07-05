@@ -16,3 +16,9 @@ export function getInitials(str) {
   }
   return initials.toUpperCase();
 }
+
+export function getBirthYear(str) {
+  if (!str) { return null; }
+  const indexBBY = str.indexOf('BBY');
+  return indexBBY > -1 ? `${str.substring(0, indexBBY)} ${str.substring(indexBBY)}` : str
+}

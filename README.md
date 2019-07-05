@@ -1,8 +1,6 @@
 # Star Wars
 
-# Todo
-add tests for getInitials()
-add space between number and bby for birth year
+React Native app that displays Star Wars data from SWAPI (https://swapi.co/)
 
-# Issues
-https://stackoverflow.com/questions/52061476/cancel-all-subscriptions-and-asyncs-in-the-componentwillunmount-method-how
+Built using Expo.
+

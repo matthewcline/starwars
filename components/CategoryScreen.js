@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { getDate, getInitials } from './utils';
+import { getDate, getInitials, getBirthYear } from './utils';
 import { Text, View, ScrollView, Image, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 
 class CategoryScreen extends Component {
+  _isMounted = false;
 
   constructor(props){
     super(props);
@@ -10,6 +11,8 @@ class CategoryScreen extends Component {
   }
 
   async componentDidMount() {
+    this._isMounted = true;
+
     try {
       var url = this.props.navigation.getParam('url', 'NO-URL');
       var topUrl = url;
@@ -22,14 +25,20 @@ class CategoryScreen extends Component {
         responseJson = await response.json();
         results = results.concat(responseJson.results);
       }
-      this.setState({
-        isLoading: false,
-        dataSource: results,
-        url: topUrl
-      });
+      if (this._isMounted) { // avoids calling a state update on an umounted component
+        this.setState({
+          isLoading: false,
+          dataSource: results,
+          url: topUrl
+        });
+      }
     } catch (error) {
       console.error(error);
     }
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   static navigationOptions = ({ navigation, navigationOptions }) => {
@@ -37,7 +46,7 @@ class CategoryScreen extends Component {
       title: navigation.getParam('categoryTitle', 'categoryTitle'),
     };
   };
-  
+
   getItems() {
     const items = this.state.dataSource.map((item, index) => {  
       return (
@@ -48,7 +57,7 @@ class CategoryScreen extends Component {
             this.props.navigation.navigate('Item', {
               itemId: 86,
               heading: item.name || item.title,
-              subheading: item.birth_year || item.diameter || item.classification || item.model || item.opening_crawl,
+              subheading: item.diameter || item.classification || item.model || item.opening_crawl || getBirthYear(item.birth_year),
               url: item.url
             });
           }}
@@ -65,7 +74,7 @@ class CategoryScreen extends Component {
                   {item.name || item.title}
                 </Text>
                 <Text style={{color: 'gray'}}>
-                  {item.birth_year || item.diameter || item.classification || item.model || `${item.opening_crawl.substring(0,20)}...`}
+                  { item.diameter || item.classification || item.model || getBirthYear(item.birth_year) || `${item.opening_crawl.substring(0,20)}...`}
                 </Text>
               </View>
             </View>
