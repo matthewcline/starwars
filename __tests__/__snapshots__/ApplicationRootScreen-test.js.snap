@@ -1,0 +1,439 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "flex": 1,
+        "height": "100%",
+        "justifyContent": "flex-end",
+        "width": "100%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../assets/application_root_header.png",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": "100%",
+            "width": "100%",
+          },
+          undefined,
+        ]
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 17,
+          "marginLeft": "4%",
+        }
+      }
+    >
+      Explore the Star Wars Universe
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "margin": "4%",
+        }
+      }
+    >
+      Orbiting the planet at maximum velocity.  The moon with the Rebel base will be in range in thirty minutes.  This will be a day long remembered.
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#eaf1f8",
+        "flex": 3,
+        "paddingLeft": "2%",
+        "paddingRight": "2%",
+        "paddingTop": "2%",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#d6d7da",
+          "borderRadius": 4,
+          "borderWidth": 0.5,
+          "flex": 1,
+          "flexDirection": "row",
+          "margin": 3,
+          "opacity": 1,
+          "shadowColor": "#95999d",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.9,
+          "shadowRadius": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/noun_person_1880095.png",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "flex": 5,
+          }
+        }
+      >
+        People
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#d6d7da",
+          "borderRadius": 4,
+          "borderWidth": 0.5,
+          "flex": 1,
+          "flexDirection": "row",
+          "margin": 3,
+          "opacity": 1,
+          "shadowColor": "#95999d",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.9,
+          "shadowRadius": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/noun_Film_1666495.png",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "flex": 5,
+          }
+        }
+      >
+        Films
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#d6d7da",
+          "borderRadius": 4,
+          "borderWidth": 0.5,
+          "flex": 1,
+          "flexDirection": "row",
+          "margin": 3,
+          "opacity": 1,
+          "shadowColor": "#95999d",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.9,
+          "shadowRadius": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/noun_spaceship_1311585.png",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "flex": 5,
+          }
+        }
+      >
+        Starships
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#d6d7da",
+          "borderRadius": 4,
+          "borderWidth": 0.5,
+          "flex": 1,
+          "flexDirection": "row",
+          "margin": 3,
+          "opacity": 1,
+          "shadowColor": "#95999d",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.9,
+          "shadowRadius": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/noun_Car_1881053.png",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "flex": 5,
+          }
+        }
+      >
+        Vehicles
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#d6d7da",
+          "borderRadius": 4,
+          "borderWidth": 0.5,
+          "flex": 1,
+          "flexDirection": "row",
+          "margin": 3,
+          "opacity": 1,
+          "shadowColor": "#95999d",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.9,
+          "shadowRadius": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/noun_alien_627223.png",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "flex": 5,
+          }
+        }
+      >
+        Species
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#d6d7da",
+          "borderRadius": 4,
+          "borderWidth": 0.5,
+          "flex": 1,
+          "flexDirection": "row",
+          "margin": 3,
+          "opacity": 1,
+          "shadowColor": "#95999d",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.9,
+          "shadowRadius": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../assets/noun_Planet_1867071.png",
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "flex": 5,
+          }
+        }
+      >
+        Planets
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../assets/ensigns.png",
+          }
+        }
+        style={
+          Object {
+            "margin": 30,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
