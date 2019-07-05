@@ -4,8 +4,8 @@ React Native app that displays Star Wars data from SWAPI (https://swapi.co/)
 
 This project was built with Expo.
 
-A published version of the project is hosted at: https://exp.host/@mcline/starwars
-To view the project, download the Expo client and scan the code located at the link above
+A published version of the project is hosted at: https://exp.host/@mcline/starwars.
+To view the project, download the Expo client and scan the code found from the link above.
 
 # Screens
 
