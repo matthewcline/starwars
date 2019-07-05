@@ -9,9 +9,17 @@ To view the project, download the Expo client and scan the code located at the l
 
 # Screens
 
-<img src="https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG" alt="drawing" width="400"/>
-<img src="https://raw.githubusercontent.com/matthewcline/starwars/master/assets/CategoryScreen.PNG" alt="drawing" width="400"/>
-<img src="https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ItemScreen.PNG" alt="drawing" width="400"/>
+<div class="row">
+  <div class="column">
+    <img src="https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG" alt="drawing" width="200"/>
+  </div>
+  <div class="column">
+    <img src="https://raw.githubusercontent.com/matthewcline/starwars/master/assets/CategoryScreen.PNG" alt="drawing" width="200"/>
+  </div>
+  <div class="column">
+    <img src="https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ItemScreen.PNG" alt="drawing" width="200"/>
+  </div>
+</div>
 
 # References
 [React Native Getting Started](https://facebook.github.io/react-native/docs/getting-started.html)
