@@ -5,10 +5,13 @@ React Native app that displays Star Wars data from SWAPI (https://swapi.co/)
 This project was built with Expo.
 
 A published version of the project is hosted at: https://exp.host/@mcline/starwars
+To view the project, download the Expo client and scan the code located at the link above
 
 # Screens
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG "Logo Title Text 1")
 
 # References
-## [React Native Getting Started](https://facebook.github.io/react-native/docs/getting-started.html)
+[React Native Getting Started](https://facebook.github.io/react-native/docs/getting-started.html)
