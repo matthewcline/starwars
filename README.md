@@ -9,7 +9,7 @@ To view the project, download the Expo client and scan the code located at the l
 
 # Screens
 
-![alt text](https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG =250x)
 ![alt text](https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG "Logo Title Text 1")
 ![alt text](https://raw.githubusercontent.com/matthewcline/starwars/master/assets/ApplicationRootScreen.PNG "Logo Title Text 1")
 
